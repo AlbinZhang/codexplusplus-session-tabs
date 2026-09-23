@@ -2,6 +2,12 @@
 
 Codex++ 本地脚本，为 Codex 顶部添加可拖动的 Chrome 风格会话标签。
 
+## 依赖
+
+本脚本依赖 **Codex++ 管理工具**的本地脚本环境运行，不支持脱离 Codex++ 直接安装到 Codex。
+
+Codex++ 脚本市场：<https://github.com/BigPizzaV3/CodexPlusPlusScriptMarket>
+
 ## 效果预览
 
 ![会话标签栏效果预览](./assets/session-tabs-preview.png)
