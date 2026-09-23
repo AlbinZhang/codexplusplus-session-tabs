@@ -2,6 +2,10 @@
 
 Codex++ 本地脚本，为 Codex 顶部添加可拖动的 Chrome 风格会话标签。
 
+## 效果预览
+
+![会话标签栏效果预览](./assets/session-tabs-preview.png)
+
 ## 功能
 
 - 自动把打开过的会话加入标签栏
