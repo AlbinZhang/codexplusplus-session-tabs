@@ -240,10 +240,12 @@
         .find((item) => item.getAttribute("data-app-action-sidebar-thread-id") === tab.id);
       const handler = rowHandler(row);
       if (handler) state.handlers.set(tab.id, handler);
-      tab.attention = !!row?.querySelector(".bg-info-solid");
-      tab.running = !!row && [...row.querySelectorAll("*")].some((node) =>
-        [...node.classList].some((name) => name === "animate-spin" || name.endsWith(":animate-spin"))
-      );
+      if (row) {
+        tab.attention = !!row.querySelector(".bg-info-solid");
+        tab.running = [...row.querySelectorAll("*")].some((node) =>
+          [...node.classList].some((name) => name === "animate-spin" || name.endsWith(":animate-spin"))
+        );
+      }
     }
     save();
     render();
@@ -287,5 +289,10 @@
     if (!host) keepMounted();
     schedule();
   });
-  state.observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["data-app-action-sidebar-thread-selected", "data-app-action-sidebar-thread-title"] });
+  state.observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ["class", "data-app-action-sidebar-thread-selected", "data-app-action-sidebar-thread-title", "data-state", "aria-busy"],
+  });
 })();
